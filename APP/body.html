@@ -1,0 +1,100 @@
+
+<div id="container"></div>
+<div id="splashimage">
+  <div id="start" style="display: none;">
+    <h2> Поехали! </h2>
+  </div>
+</div>
+  <!-- Main screen -->
+  
+<a-scene
+ splash-image
+next-button
+  container 
+  xrextras-gesture-detector
+  landing-page="
+    mediaSrc: #animatedModel;
+    mediaAnimation: mixamo.com;
+    sceneEnvMap: pastel;
+    textShadow: True" 
+  xrextras-loading="
+ 
+    loadBackgroundColor: #007AFF;
+   cameraBackgroundColor: #5AC8FA;
+    loadImage: #myCustomImage;
+    loadAnimation: pulse"
+  xrextras-runtime-error
+  renderer="colorManagement:true"
+  xrweb>
+  <!--The button that allows you to take a photo-->
+<xrextras-capture-button capture-mode="standard"></xrextras-capture-button>
+  <!--The button that allows you to customize the video-->
+<xrextras-capture-config enable-end-card="false"></xrextras-capture-config>
+<xrextras-capture-preview
+  action-button-share-text="Поделить"
+  action-button-view-text="Посмотреть"
+  finalize-text="Отправка"
+></xrextras-capture-preview>
+
+  <a-assets>
+    <a-asset-item id="animatedModel" src="./assets/santa.gltf"></a-asset-item>
+    <a-asset-item id="animatedModel1" src="./assets/snowMan.gltf"></a-asset-item>
+    <a-asset-item id="animatedModel2" src="./assets/tree.gltf"></a-asset-item>
+    <audio id="magical-music" preload="auto" class="a-sound" src="./assets/MagicalTransition.mp3" response-type="arraybuffer"></audio>
+  </a-assets>
+  
+ <a-assets> 
+ <img id="myCustomImage" src="assets/my-custom-image_1.png">
+ </a-assets>
+   
+  <a-camera
+    id="camera"
+    position="0 8 8"
+    raycaster="objects: .cantap"
+    cursor="
+      fuse: false;
+      rayOrigin: mouse;">
+     <a-entity sound="src: #magical-music; loop: true; volume: 5;"></a-entity>
+  </a-camera>
+
+  <a-entity
+    id="model"
+    gltf-model="#animatedModel"
+    class="cantap"
+    scale="3 3 3"
+    animation-mixer="clip: mixamo.com; loop: repeat;"
+    xrextras-hold-drag 
+    xrextras-two-finger-rotate
+    xrextras-pinch-scale
+    visible = false
+    >
+  </a-entity>
+
+  <a-entity
+    id="model1"
+    gltf-model="#animatedModel1"
+    class="cantap"
+    scale="100 100 100"
+    animation-mixer
+    xrextras-hold-drag 
+    xrextras-two-finger-rotate
+    xrextras-pinch-scale
+    visible = false
+    >
+    </a-entity>
+    
+      <a-entity
+    id="model2"
+    gltf-model="#animatedModel2"
+    class="cantap"
+    scale="3 3 3"
+    animation-mixer
+    xrextras-hold-drag 
+    xrextras-two-finger-rotate
+    xrextras-pinch-scale
+    visible = false
+    >
+  </a-entity>
+
+  <a-plane id="ground" position="0 0 0" rotation="-90 0 0" width="50" height="50" material="shader: shadow" shadow></a-plane>
+</a-scene>
