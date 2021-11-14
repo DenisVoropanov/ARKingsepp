@@ -1,0 +1,77 @@
+
+#container {
+  position: absolute;
+  width: 100vw;
+  max-height: 20vw;
+  left: 50%;
+  bottom: 70vh;
+  transform: translateX(-50%);
+  z-index: 10;  
+  text-align: center;
+  pointer-events:none;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+#container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel {
+  padding: 1.5rem;
+  border: 0.3rem solid white;
+  margin: 0.5rem;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  pointer-events:auto;
+}
+
+button:focus {
+  box-shadow: 0px 0px 0px 0.3rem white;
+  outline: none !important;
+}
+
+.prompt-box-8w {
+  background-color: white;
+  color:#ffffff !important;
+}
+.prompt-button-8w{
+  background-color:#ff0000 !important;
+}
+.button-primary-8w{
+  background-color:#3caa3c!important;
+}
+.hidden {
+  display: none !important;
+}
+
+#splashimage {
+  z-index: 998;
+  height: 100%;
+  background-image: url('./assets/splash-image.jpg');
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+#start {
+ 
+  width: 50vw;
+  height: auto;
+  position: absolute;
+  bottom: 10vh;
+  left: 25vw;
+  background-color: #DC143C;
+  border: 0.2em solid white;
+  text-align: center;
+  color: #FFF;
+  border-radius: 100px;
+}
+
+h2 {
+  font-size: 1.3em;
+  text-align: center;
+  font-family: monospace;
+}
